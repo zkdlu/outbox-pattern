@@ -1,4 +1,4 @@
-package com.zkdlu.messagerelay;
+package com.zkdlu.outboxapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

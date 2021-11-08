@@ -1,5 +1,6 @@
-package com.zkdlu.messagerelay.outbox.kafka;
+package com.zkdlu.outboxapp.kafka;
 
+import com.zkdlu.outboxapp.outbox.Outbox;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.context.annotation.Bean;
@@ -24,12 +25,12 @@ public class KafkaProducerConfig {
     }
 
     @Bean
-    public ProducerFactory<String, String> producerFactory() {
+    public ProducerFactory<String, Outbox> producerFactory() {
         return new DefaultKafkaProducerFactory<>(producerConfig());
     }
 
     @Bean
-    public KafkaTemplate<String, String> kafkaTemplate() {
+    public KafkaTemplate<String, Outbox> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
     }
 }

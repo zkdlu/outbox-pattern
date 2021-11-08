@@ -1,9 +1,11 @@
-package com.zkdlu.messagerelay.outbox.kafka;
+package com.zkdlu.outboxapp.kafka;
 
-import com.zkdlu.messagerelay.outbox.Outbox;
+import com.zkdlu.outboxapp.outbox.Outbox;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
+import org.springframework.util.concurrent.ListenableFuture;
 
 @Component
 public class Producer {
@@ -13,7 +15,7 @@ public class Producer {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendMessage(NewTopic topic, Outbox message) {
-        kafkaTemplate.send(topic.name(), message);
+    public ListenableFuture<SendResult<String, Outbox>> sendMessage(NewTopic topic, Outbox message) {
+        return kafkaTemplate.send(topic.name(), message);
     }
 }

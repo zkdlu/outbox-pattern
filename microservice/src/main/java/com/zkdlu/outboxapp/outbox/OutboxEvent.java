@@ -1,4 +1,4 @@
-package com.zkdlu.outboxapp.order.outbox;
+package com.zkdlu.outboxapp.outbox;
 
 import java.time.LocalDateTime;
 

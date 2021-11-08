@@ -1,4 +1,4 @@
-package com.zkdlu.messagerelay.outbox;
+package com.zkdlu.outboxapp.outbox;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,17 +30,4 @@ public class Outbox {
         this.eventType = eventType;
         this.createAt = createAt;
     }
-
-    @Override
-    public String toString() {
-        return "Outbox{" +
-                "id=" + id +
-                ", aggregateId='" + aggregateId + '\'' +
-                ", aggregateType='" + aggregateType + '\'' +
-                ", payload='" + payload + '\'' +
-                ", eventType='" + eventType + '\'' +
-                ", createAt=" + createAt +
-                '}';
-    }
 }
-

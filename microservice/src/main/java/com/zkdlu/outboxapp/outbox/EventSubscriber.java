@@ -1,4 +1,4 @@
-package com.zkdlu.outboxapp.order.outbox;
+package com.zkdlu.outboxapp.outbox;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,5 @@ public class EventSubscriber {
         );
 
         outboxRepository.save(outbox);
-
-        throw new RuntimeException();
     }
 }

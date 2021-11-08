@@ -1,4 +1,4 @@
-package com.zkdlu.messagerelay.outbox;
+package com.zkdlu.outboxapp.outbox;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
