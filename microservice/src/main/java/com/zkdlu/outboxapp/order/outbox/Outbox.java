@@ -1,4 +1,4 @@
-package com.zkdlu.outboxapp.outbox;
+package com.zkdlu.outboxapp.order.outbox;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

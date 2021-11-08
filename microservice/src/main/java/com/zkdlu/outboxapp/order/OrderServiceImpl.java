@@ -2,8 +2,8 @@ package com.zkdlu.outboxapp.order;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.zkdlu.outboxapp.outbox.EventPublisher;
-import com.zkdlu.outboxapp.outbox.OutboxEvent;
+import com.zkdlu.outboxapp.order.outbox.EventPublisher;
+import com.zkdlu.outboxapp.order.outbox.OutboxEvent;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

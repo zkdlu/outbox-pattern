@@ -1,4 +1,4 @@
-package com.zkdlu.outboxapp.outbox;
+package com.zkdlu.outboxapp.order.outbox;
 
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
