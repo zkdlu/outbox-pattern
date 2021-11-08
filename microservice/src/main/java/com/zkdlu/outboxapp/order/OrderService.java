@@ -1,10 +1,12 @@
 package com.zkdlu.outboxapp.order;
 
 
-public interface OrderService {
-    void newOrder(long orderId);
+import com.fasterxml.jackson.core.JsonProcessingException;
 
-    void completeOrder(long orderId);
+public interface OrderService {
+    void newOrder(long orderId) throws JsonProcessingException;
+
+    void completeOrder(long orderId) throws JsonProcessingException;
 
     Order getOrder(long orderId);
 }

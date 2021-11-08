@@ -1,5 +1,6 @@
 package com.zkdlu.outbox.order;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.zkdlu.outboxapp.order.Order;
 import com.zkdlu.outboxapp.order.OrderService;
 import com.zkdlu.outboxapp.order.OrderServiceImpl;
@@ -19,11 +20,11 @@ class OrderServiceTest {
     @BeforeEach
     void setUp() {
         spyOrderRepository = new SpyOrderRepository();
-        orderService = new OrderServiceImpl(spyOrderRepository);
+        orderService = new OrderServiceImpl(spyOrderRepository, null);
     }
 
     @Test
-    void newOrder_callsSaveInOrderRepository() {
+    void newOrder_callsSaveInOrderRepository() throws JsonProcessingException {
         long givenOrderId = 1L;
 
         orderService.newOrder(givenOrderId);
@@ -34,7 +35,7 @@ class OrderServiceTest {
     }
 
     @Test
-    void completeOrder_callsFindByIdInOrderRepository() {
+    void completeOrder_callsFindByIdInOrderRepository() throws JsonProcessingException {
         long givenOrderId = 1L;
         Order givenOrder = new Order(givenOrderId);
         spyOrderRepository.findById_returnValue = Optional.of(givenOrder);
@@ -45,7 +46,7 @@ class OrderServiceTest {
     }
 
     @Test
-    void completeOrder_callsCompleteInOrder() {
+    void completeOrder_callsCompleteInOrder() throws JsonProcessingException {
         long givenOrderId = 1L;
 
         Order givenOrder = new Order(givenOrderId);

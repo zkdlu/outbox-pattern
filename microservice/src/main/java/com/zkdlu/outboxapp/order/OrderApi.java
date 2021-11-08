@@ -1,5 +1,6 @@
 package com.zkdlu.outboxapp.order;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -16,14 +17,14 @@ public class OrderApi {
     }
 
     @PostMapping("/order/{orderId}")
-    public ResponseEntity createOrder(@PathVariable long orderId) {
+    public ResponseEntity createOrder(@PathVariable long orderId) throws JsonProcessingException {
         orderService.newOrder(orderId);
         return ResponseEntity.ok()
                 .build();
     }
 
     @PatchMapping("/order/{orderId}")
-    public ResponseEntity completeOrder(@PathVariable long orderId) {
+    public ResponseEntity completeOrder(@PathVariable long orderId) throws JsonProcessingException {
         orderService.completeOrder(orderId);
         return ResponseEntity.ok()
                 .build();
