@@ -15,7 +15,7 @@ public class Producer {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public ListenableFuture<SendResult<String, Outbox>> sendMessage(NewTopic topic, Outbox message) {
-        return kafkaTemplate.send(topic.name(), message);
+    public ListenableFuture<SendResult<String, Outbox>> sendMessage(NewTopic topic, String partitionKey, Outbox message) {
+        return kafkaTemplate.send(topic.name(), partitionKey,  message);
     }
 }
