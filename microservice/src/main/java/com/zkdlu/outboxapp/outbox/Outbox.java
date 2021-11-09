@@ -30,4 +30,28 @@ public class Outbox {
         this.eventType = eventType;
         this.createAt = createAt;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getAggregateId() {
+        return aggregateId;
+    }
+
+    public String getAggregateType() {
+        return aggregateType;
+    }
+
+    public String getPayload() {
+        return payload;
+    }
+
+    public String getEventType() {
+        return eventType;
+    }
+
+    public LocalDateTime getCreateAt() {
+        return createAt;
+    }
 }

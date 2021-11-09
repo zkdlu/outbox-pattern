@@ -8,10 +8,11 @@ public class SpyOrderService implements OrderService {
     public long completeOrder_argumentOrderId;
     public long getOrder_argumentOrderId;
     public Order getOrder_returnValue;
+    public boolean newOrder_wasCalled;
 
     @Override
-    public void newOrder(long orderId) {
-        newOrder_argumentOrderId = orderId;
+    public void newOrder() {
+        newOrder_wasCalled = true;
     }
 
     @Override

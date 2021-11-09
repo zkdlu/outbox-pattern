@@ -16,9 +16,9 @@ public class OrderApi {
         this.orderService = orderService;
     }
 
-    @PostMapping("/order/{orderId}")
-    public ResponseEntity createOrder(@PathVariable long orderId) throws JsonProcessingException {
-        orderService.newOrder(orderId);
+    @PostMapping("/order")
+    public ResponseEntity createOrder() throws JsonProcessingException {
+        orderService.newOrder();
         return ResponseEntity.ok()
                 .build();
     }

@@ -18,7 +18,8 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderState state;
 
-    protected Order() {
+    public Order() {
+        this.state = OrderState.PREPARE;
     }
 
     public Order(long orderId) {

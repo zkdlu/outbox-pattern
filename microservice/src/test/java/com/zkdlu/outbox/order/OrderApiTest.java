@@ -32,18 +32,16 @@ class OrderApiTest {
 
     @Test
     void createOrder_isOk() throws Exception {
-        long orderId = 1L;
-        mockMvc.perform(post("/order/" + orderId))
+        mockMvc.perform(post("/order"))
                 .andExpect(status().isOk());
     }
 
     @Test
     void createOrder_callsNewOrderInOrderService() throws Exception {
-        long orderId = 1L;
-        mockMvc.perform(post("/order/" + orderId))
+        mockMvc.perform(post("/order"))
                 .andExpect(status().isOk());
 
-        assertThat(spyOrderService.newOrder_argumentOrderId).isEqualTo(orderId);
+        assertThat(spyOrderService.newOrder_wasCalled).isTrue();
     }
 
     @Test

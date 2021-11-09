@@ -23,8 +23,8 @@ public class OrderServiceImpl implements OrderService {
 
     @Transactional
     @Override
-    public void newOrder(long orderId) throws JsonProcessingException {
-        Order order = new Order(orderId);
+    public void newOrder() throws JsonProcessingException {
+        Order order = new Order();
 
         orderRepository.save(order);
 
